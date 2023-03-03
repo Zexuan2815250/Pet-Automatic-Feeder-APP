@@ -27,7 +27,7 @@ class _TabsState extends State<Tabs> {
       //最上面导航栏
       appBar: AppBar(
         title: const ListTile(
-          leading: Icon(Icons.reorder, color: Colors.white,),
+          // leading: Icon(Icons.reorder, color: Colors.white,),
           title: Text(
             "Pet Feeder",
             style: TextStyle(
@@ -35,8 +35,44 @@ class _TabsState extends State<Tabs> {
               color: Colors.white, // 设置字体颜色
             ),
           ),
-          trailing: Icon(Icons.account_circle, color: Colors.white),
+          // trailing: Icon(Icons.account_circle, color: Colors.white),
         ),
+      ),
+      //侧边弹窗
+      drawer: Drawer(
+        child: Column(
+          children: const <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Nana"),
+              accountEmail: Text("nana@petfeeder.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage("images/account.png"),
+              ),
+              decoration: BoxDecoration(
+                // color: Colors.amber,
+                image: DecorationImage(
+                  image: AssetImage("images/drawerBackground.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text("Personal Center"),
+              leading: CircleAvatar(
+                backgroundColor: Color.fromRGBO(187,215,216,1),
+                child: Icon(Icons.account_circle, color: Colors.white,),
+              ),
+            ),
+            Divider(),
+            ListTile(
+              title: Text("Settings"),
+              leading: CircleAvatar(
+                backgroundColor: Color.fromRGBO(187,215,216,1),
+                child: Icon(Icons.settings, color: Colors.white,),
+              ),
+            ),
+          ],
+        )
       ),
       //主体
       body: this._pageList[this._currentIndex],
@@ -48,7 +84,7 @@ class _TabsState extends State<Tabs> {
             this._currentIndex = index;
           });
         },
-        selectedItemColor: Colors.blueGrey,
+        selectedItemColor: Color.fromRGBO(187,215,216,1),
         unselectedItemColor: Colors.black45,
         items: const [
           BottomNavigationBarItem(
@@ -63,10 +99,10 @@ class _TabsState extends State<Tabs> {
             icon: Icon(Icons.search),
             label: "Search",
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "Setting",
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.settings),
+          //   label: "Setting",
+          // ),
         ],
       ),
     );
