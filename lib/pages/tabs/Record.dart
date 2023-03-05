@@ -24,7 +24,7 @@ class FeederCard  extends StatelessWidget{
                 ListTile(
                   title: const Text(
                     "Feed xx g pet food",
-                    style: TextStyle(fontSize: 28),
+                    style: TextStyle(fontSize: 24),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class FeederCard  extends StatelessWidget{
                 ListTile(
                   title: const Text(
                     "Feed xx g pet food",
-                    style: TextStyle(fontSize: 28),
+                    style: TextStyle(fontSize: 24),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +76,7 @@ class FeederCard  extends StatelessWidget{
                 ListTile(
                   title: const Text(
                     "Feed xx g pet food",
-                    style: TextStyle(fontSize: 28),
+                    style: TextStyle(fontSize: 24),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +102,7 @@ class FeederCard  extends StatelessWidget{
                 ListTile(
                   title: const Text(
                     "Feed xx g pet food",
-                    style: TextStyle(fontSize: 28),
+                    style: TextStyle(fontSize: 24),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -93,17 +93,37 @@ class _TabsState extends State<Tabs> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.pending_actions),
-            label: "Record",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: "Search",
+            label: "Schedule",
           ),
           // BottomNavigationBarItem(
+          //   icon: Icon(Icons.search),
+          //   label: "Search",
+          // ),
+          // // BottomNavigationBarItem(
           //   icon: Icon(Icons.settings),
           //   label: "Setting",
           // ),
         ],
+      ),
+      //右下角增加日程安排的框框
+      floatingActionButton: Container(
+        height: 80,
+        width: 80,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: Colors.white,
+        ),
+        margin: EdgeInsets.only(top:10),
+        padding: EdgeInsets.all(8),
+        child: FloatingActionButton(
+          child: Icon(Icons.add),
+          backgroundColor: Color.fromRGBO(187,215,216,1),
+          onPressed: (){
+            setState(() {
+              this._currentIndex = 1;
+            });
+          },
+        )
       ),
     );
   }
