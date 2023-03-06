@@ -85,7 +85,7 @@ class _TabsState extends State<Tabs> {
           });
         },
         selectedItemColor: Color.fromRGBO(187,215,216,1),
-        unselectedItemColor: Colors.black45,
+        unselectedItemColor: Colors.black,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
