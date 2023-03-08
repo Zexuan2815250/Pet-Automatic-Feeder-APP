@@ -8,17 +8,82 @@ class RecordPage extends StatefulWidget{
 class _RecordPageState extends State<RecordPage>{
   @override
   Widget build(BuildContext context) {
-    return FeederCard();
+    return Column(
+      children: [
+        MenuRecordCard(),
+        FeederCard(),
+      ],
+    );
   }
 }
+
+class MenuRecordCard extends StatelessWidget{
+  const MenuRecordCard ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.topLeft,
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+      padding: EdgeInsets.fromLTRB(0, 25, 0, 25),
+      // color: Colors.white,
+      height: 100,
+      width: MediaQuery.of(context).size.width,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.white,
+            // offset: Offset(5, 5),
+          ),
+        ],
+      ),
+      child: GridView(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          mainAxisSpacing: 2,
+          crossAxisSpacing: 1,
+          childAspectRatio: 1 / 0.3,
+        ),
+        children: [
+          Icon(Icons.restaurant, color: Colors.amber,),
+          Icon(Icons.local_drink, color: Colors.cyan,),
+          Icon(Icons.delete_outline, color: Colors.red,),
+          Icon(Icons.videocam, color: Colors.lightGreen,),
+          Text("Food", textAlign: TextAlign.center,),
+          Text("Water", textAlign: TextAlign.center,),
+          Text("Clean", textAlign: TextAlign.center,),
+          Text("Camera", textAlign: TextAlign.center,),
+        ],
+      ),
+    );
+  }
+}
+
 class FeederCard  extends StatelessWidget{
   const FeederCard ({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Card(
+    return Container(
+      alignment: Alignment.topLeft,
+      margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+      padding: EdgeInsets.fromLTRB(0, 25, 0, 25),
+      // color: Colors.white,
+      height: 520,
+      width: MediaQuery.of(context).size.width,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        boxShadow: [
+          BoxShadow(
+          color: Colors.white,
+    // offset: Offset(5, 5),
+          ),
+        ],
+      ),
+      child: ListView(
+        children: [
+          Card(
             child: Column(
               children: [
                 ListTile(
@@ -43,8 +108,8 @@ class FeederCard  extends StatelessWidget{
                 ),
               ],
             )
-        ),
-        Card(
+          ),
+          Card(
             child: Column(
               children: [
                 ListTile(
@@ -69,8 +134,8 @@ class FeederCard  extends StatelessWidget{
                 ),
               ],
             )
-        ),
-        Card(
+          ),
+          Card(
             child: Column(
               children: [
                 ListTile(
@@ -95,8 +160,8 @@ class FeederCard  extends StatelessWidget{
                 ),
               ],
             )
-        ),
-        Card(
+          ),
+          Card(
             child: Column(
               children: [
                 ListTile(
@@ -121,8 +186,9 @@ class FeederCard  extends StatelessWidget{
                 ),
               ],
             )
-        ),
-      ],
+          ),
+        ],
+      )
     );
   }
 }

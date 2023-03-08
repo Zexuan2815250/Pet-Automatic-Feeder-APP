@@ -15,8 +15,8 @@ class _HomePageState extends State<HomePage> {
     // );
     return Column(
       children: [
-        FoodIntakeCard(),
         MenuCard(),
+        FoodIntakeCard(),
         RecommendedReading(),
       ],
     );
@@ -30,7 +30,7 @@ class FoodIntakeCard extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
       padding: EdgeInsets.all(15),
       // color: Colors.white,
       height: 200,
@@ -129,7 +129,7 @@ class MenuCard extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
       padding: EdgeInsets.fromLTRB(0, 25, 0, 25),
       // color: Colors.white,
       height: 100,
@@ -151,10 +151,10 @@ class MenuCard extends StatelessWidget{
           childAspectRatio: 1 / 0.3,
         ),
         children: [
-          Icon(Icons.restaurant),
-          Icon(Icons.local_drink),
-          Icon(Icons.delete_outline),
-          Icon(Icons.videocam),
+          Icon(Icons.restaurant, color: Colors.amber,),
+          Icon(Icons.local_drink, color: Colors.cyan,),
+          Icon(Icons.delete_outline, color: Colors.red,),
+          Icon(Icons.videocam, color: Colors.lightGreen,),
           Text("Food", textAlign: TextAlign.center,),
           Text("Water", textAlign: TextAlign.center,),
           Text("Clean", textAlign: TextAlign.center,),
@@ -183,59 +183,109 @@ class RecommendedReading extends StatelessWidget{
           BoxShadow(
             color: Colors.white,
             // offset: Offset(5, 5),
-            ),
-          ],
-        ),
-        child: GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 1,
-          mainAxisSpacing: 5,
-          crossAxisSpacing: 1,
-          childAspectRatio: 1 / 0.2,
-        ),
-        children: [
-          ListTile(
-            // leading: Images.assets('images/account.png'),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/account.png'), // no matter how big it is, it won't overflow
-            ),
-            title: Text("lalalalalalalalalalalalalalalal"),
-            subtitle: Text("dudududududududududududududududududududud"),
           ),
+        ],
+      ),
+      child: ListView(
+        children: <Widget> [
           ListTile(
-            // leading: Images.assets('images/account.png'),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/account.png'), // no matter how big it is, it won't overflow
+    // leading: Images.assets('images/account.png'),
+            leading: Container(
+              child: Image.asset("images/test2.png"),
             ),
-            title: Text("lalalalalalalalalalalalalalalal"),
-            subtitle: Text("dudududududududududududududududududududud"),
+            title: Text("Cats sleep for a long time"),
+            subtitle: Text("Generally, 12-16h of sleep are needed every day, while some cats even sleep more than 20h."),
           ),
+          Divider(),
           ListTile(
             // leading: Images.assets('images/account.png'),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/account.png'), // no matter how big it is, it won't overflow
+            title: Text('They can make "meow" sound'),
+            subtitle: Text("Cats are the only animals that can make this kind of sound."),
+            trailing: Container(
+              child: Image.asset("images/test3.png"),
             ),
-            title: Text("lalalalalalalalalalalalalalalal"),
-            subtitle: Text("dudududududududududududududududududududud"),
           ),
+          Divider(),
           ListTile(
             // leading: Images.assets('images/account.png'),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/account.png'), // no matter how big it is, it won't overflow
+            leading: Container(
+
+              child: Image.asset("images/test4.png"),
             ),
-            title: Text("lalalalalalalalalalalalalalalal"),
-            subtitle: Text("dudududududududududududududududududududud"),
+            title: Text("Cats are very clean animals"),
+            subtitle: Text("It spends a lot of time combing its hair and cleaning its body with its tongue."),
           ),
+          Divider(),
           ListTile(
             // leading: Images.assets('images/account.png'),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/account.png'), // no matter how big it is, it won't overflow
+            leading: Container(
+              child: Image.asset("images/test5.png"),
             ),
-            title: Text("lalalalalalalalalalalalalalalal"),
-            subtitle: Text("dudududududududududududududududududududud"),
+            title: Text("Cats can heal themselves by making sounds"),
+            subtitle: Text('This is called "grunting therapy".'),
+          ),
+          Divider(),
+          ListTile(
+            // leading: Images.assets('images/account.png'),
+            title: Text("Cats' ears are very flexible"),
+            subtitle: Text("Their ears can also rotate 360 degrees to help them better observe the surrounding environment."),
+            trailing: Container(
+              child: Image.asset("images/test6.png"),
+            ),
           )
         ],
       )
     );
+    //     child: GridView(
+    //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+    //       crossAxisCount: 1,
+    //       mainAxisSpacing: 5,
+    //       crossAxisSpacing: 1,
+    //       childAspectRatio: 1 / 0.25,
+    //     ),
+    //     children: [
+    //       ListTile(
+    //         // leading: Images.assets('images/account.png'),
+    //         leading: Container(
+    //         child: Image.asset("images/test2.png"),
+    //         ),
+    //         title: Text("Cats like to sleep for a long time"),
+    //         subtitle: Text("Generally, 12-16 hours of sleep are needed every day, while some cats even need more than 20 hours of sleep."),
+    //       ),
+    //       ListTile(
+    //         // leading: Images.assets('images/account.png'),
+    //         title: Text("lalalalalalalalalalalalalalalal"),
+    //         subtitle: Text("dudududududududududududududududududududud"),
+    //         trailing: Container(
+    //           child: Image.asset("images/test3.png"),
+    //         ),
+    //       ),
+    //       ListTile(
+    //         // leading: Images.assets('images/account.png'),
+    //         leading: Container(
+    //           child: Image.asset("images/test4.png"),
+    //         ),
+    //         title: Text("lalalalalalalalalalalalalalalal"),
+    //         subtitle: Text("dudududududududududududududududududududud"),
+    //       ),
+    //       ListTile(
+    //         // leading: Images.assets('images/account.png'),
+    //         leading: Container(
+    //           child: Image.asset("images/test5.png"),
+    //         ),
+    //         title: Text("lalalalalalalalalalalalalalalal"),
+    //         subtitle: Text("dudududududududududududududududududududud"),
+    //       ),
+    //       ListTile(
+    //         // leading: Images.assets('images/account.png'),
+    //         title: Text("lalalalalalalalalalalalalalalal"),
+    //         subtitle: Text("dudududududududududududududududududududud"),
+    //         trailing: Container(
+    //           child: Image.asset("images/test6.png"),
+    //         ),
+    //       )
+    //     ],
+    //   )
+    // );
   }
 }
