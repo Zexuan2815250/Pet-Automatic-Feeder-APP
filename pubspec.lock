@@ -49,6 +49,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.5"
+  date_format:
+    dependency: "direct main"
+    description:
+      name: date_format
+      sha256: "3a79385d29a28db695c3bbec611ced175e1c9cc32ee9b9bed237d6042c5f850a"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.9"
   fake_async:
     dependency: transitive
     description:
